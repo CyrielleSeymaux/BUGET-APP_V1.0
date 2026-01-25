@@ -1,16 +1,3 @@
 {
-  "compilerOptions": {
-    "target": "ES2021",
-    "lib": ["DOM", "ES2021"],
-    "jsx": "react-jsx",
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "baseUrl": "src",
-    "allowImportingTsExtensions": false
-  },
-  "include": ["src"]
+  "extends": "./budgeting-app/tsconfig.json"
 }

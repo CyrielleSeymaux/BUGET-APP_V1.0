@@ -3,35 +3,44 @@
  * Page principale de l'application qui regroupe tous les composants
  * Affiche : formulaires d'entrée, résumé budgétaire et graphique
  */
-import React from 'react';
+import React, { useState } from 'react';
 import IncomeForm from './IncomeForm';
 import ExpenseForm from './ExpenseForm';
 import Summary from './Summary';
 import Chart from './Chart';
-import { useBudget } from '../hooks/useBudget';
+import useBudget from '../hooks/useBudget';
 
 const Dashboard: React.FC = () => {
+    // États locaux pour gérer les revenus et dépenses
+    const [income, setIncome] = useState<number>(0);
+    const [expenses, setExpenses] = useState<number[]>([]);
+    
     // Récupère les données budgétaires du hook useBudget
-    const { totalIncome, totalExpenses, potentialSavings } = useBudget();
+    const { income: hookIncome, expenses: hookExpenses, totalExpenses, potentialSavings } = useBudget();
+    
+    // Utilise les valeurs du hook ou les états locaux
+    const totalIncome = hookIncome || income;
+    const finalTotalExpenses = totalExpenses || 0;
+
+    const handleAddIncome = (amount: number) => {
+        setIncome(prev => prev + amount);
+    };
+
+    const handleAddExpense = (expenseData: any) => {
+        setExpenses(prev => [...prev, expenseData.amount]);
+    };
 
     return (
         <div>
             <h1>Budget Dashboard</h1>
             {/* Formulaire pour ajouter des revenus */}
-            <IncomeForm />
+            <IncomeForm onIncomeSubmit={handleAddIncome} />
             {/* Formulaire pour ajouter des dépenses */}
-            <ExpenseForm />
+            <ExpenseForm onAddExpense={handleAddExpense} />
             {/* Résumé affichant le total des revenus, dépenses et économies potentielles */}
-            <Summary 
-                totalIncome={totalIncome} 
-                totalExpenses={totalExpenses} 
-                potentialSavings={potentialSavings} 
-            />
+            <Summary />
             {/* Graphique comparant les revenus et les dépenses */}
-            <Chart 
-                income={totalIncome} 
-                expenses={totalExpenses} 
-            />
+            <Chart />
         </div>
     );
 };

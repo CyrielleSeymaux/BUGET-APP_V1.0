@@ -5,7 +5,7 @@
  */
 import React from 'react';
 import { Bar } from 'react-chartjs-2';
-import { useBudget } from '../hooks/useBudget';
+import useBudget from '../hooks/useBudget';
 
 const Chart: React.FC = () => {
     // Récupère les revenus et dépenses du hook useBudget

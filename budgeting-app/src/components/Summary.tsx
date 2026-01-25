@@ -4,11 +4,11 @@
  * Montre : revenus totaux, dépenses totales et économies potentielles
  */
 import React from 'react';
-import { useBudget } from '../hooks/useBudget';
+import useBudget from '../hooks/useBudget';
 
 const Summary: React.FC = () => {
     // Récupère les données budgétaires du hook useBudget
-    const { totalIncome, totalExpenses, potentialSavings } = useBudget();
+    const { income: totalIncome, totalExpenses, potentialSavings } = useBudget();
 
     return (
         <div>
