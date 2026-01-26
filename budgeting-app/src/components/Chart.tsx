@@ -1,10 +1,10 @@
 /**
  * Composant Chart
  * Affiche un graphique en barres comparant les revenus et les dépenses
- * Utilise la bibliothèque react-chartjs-2 pour visualiser les données
+ * Utilise la bibliothèque recharts pour visualiser les données
  */
 import React from 'react';
-import { Bar } from 'react-chartjs-2';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 import useBudget from '../hooks/useBudget';
 
 const Chart: React.FC = () => {
@@ -12,33 +12,26 @@ const Chart: React.FC = () => {
     const { income, expenses } = useBudget();
 
     // Configuration des données du graphique
-    const data = {
-        labels: ['Income', 'Expenses'],
-        datasets: [
-            {
-                label: 'Budget Overview',
-                data: [income, expenses],
-                // Couleurs de remplissage et de bordure des barres
-                backgroundColor: ['rgba(75, 192, 192, 0.6)', 'rgba(255, 99, 132, 0.6)'],
-                borderColor: ['rgba(75, 192, 192, 1)', 'rgba(255, 99, 132, 1)'],
-                borderWidth: 1,
-            },
-        ],
-    };
-
-    // Options de configuration du graphique
-    const options = {
-        scales: {
-            y: {
-                beginAtZero: true, // Les axes Y commencent à 0
-            },
+    const data = [
+        {
+            name: 'Budget',
+            Income: income,
+            Expenses: expenses,
         },
-    };
+    ];
 
     return (
         <div>
             <h2>Income vs Expenses</h2>
-            <Bar data={data} options={options} />
+            <BarChart width={500} height={300} data={data}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="name" />
+                <YAxis />
+                <Tooltip />
+                <Legend />
+                <Bar dataKey="Income" fill="#4CAF50" />
+                <Bar dataKey="Expenses" fill="#FF6B6B" />
+            </BarChart>
         </div>
     );
 };
