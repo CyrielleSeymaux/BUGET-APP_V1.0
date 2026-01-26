@@ -8,6 +8,7 @@ import IncomeForm from './IncomeForm';
 import ExpenseForm from './ExpenseForm';
 import Summary from './Summary';
 import Chart from './Chart';
+import { TipOfTheDay } from './TipOfTheDay';
 import useBudget from '../hooks/useBudget';
 
 const Dashboard: React.FC = () => {
@@ -33,6 +34,8 @@ const Dashboard: React.FC = () => {
     return (
         <div>
             <h1>Budget Dashboard</h1>
+            {/* Conseil financier du jour */}
+            <TipOfTheDay />
             {/* Formulaire pour ajouter des revenus */}
             <IncomeForm onIncomeSubmit={handleAddIncome} />
             {/* Formulaire pour ajouter des dépenses */}

@@ -31,3 +31,12 @@ export interface BudgetSummary {
     totalExpenses: number;     // Total des dépenses
     potentialSavings: number;  // Économies potentielles (revenu - dépenses)
 }
+
+/**
+ * Interface représentant un conseil financier
+ */
+export interface Tip {
+    id: string;                                                  // Identifiant unique du conseil
+    content: string;                                            // Contenu du conseil
+    category: 'budgeting' | 'savings' | 'investing';           // Catégorie du conseil
+}
