@@ -1,5 +1,6 @@
 import React from 'react';
 import { useBudget } from './hooks';
+import { TipOfTheDay } from './components/TipOfTheDay';
 import TransactionForm from './components/TransactionForm';
 import TransactionList from './components/TransactionList';
 import Summary from './components/Summary';
@@ -20,6 +21,9 @@ export default function App() {
 
   return (
     <div className="app">
+      <div style={{ marginBottom: '30px' }}>
+        <TipOfTheDay />
+      </div>
       <div>
         <div className="card">
           <div className="header">

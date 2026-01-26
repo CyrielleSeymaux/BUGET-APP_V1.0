@@ -5,17 +5,21 @@
  */
 import React, { useState } from 'react';
 
-const ExpenseForm = ({ onAddExpense }) => {
+interface ExpenseFormProps {
+    onAddExpense: (expense: { expense: string; amount: number }) => void;
+}
+
+const ExpenseForm: React.FC<ExpenseFormProps> = ({ onAddExpense }) => {
     // État pour stocker le nom de la dépense
-    const [expense, setExpense] = useState('');
+    const [expense, setExpense] = useState<string>('');
     // État pour stocker le montant de la dépense
-    const [amount, setAmount] = useState('');
+    const [amount, setAmount] = useState<string>('');
 
     /**
      * Gère la soumission du formulaire
      * Valide les données et appelle le callback onAddExpense
      */
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         if (expense && amount) {
             onAddExpense({ expense, amount: parseFloat(amount) });

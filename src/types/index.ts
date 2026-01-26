@@ -11,6 +11,12 @@ export interface Expense {
     amount: number;
 }
 
+export interface Tip {
+    id: string;
+    content: string;
+    category: 'budgeting' | 'savings' | 'investing';
+}
+
 // Re-export shared app types from src/types.ts so imports like
 // `import type { Transaction } from '../types'` work across the app.
 export * from '../types';

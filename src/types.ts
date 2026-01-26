@@ -12,3 +12,8 @@ export interface Transaction {
 export interface Settings {
   startingBalance: number;
 }
+
+export interface BudgetState {
+  transactions: Transaction[];
+  categories: string[];
+}

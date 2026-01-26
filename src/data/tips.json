@@ -1,0 +1,62 @@
+[
+  {
+    "id": "tip-001",
+    "content": "Build an emergency fund with 3-6 months of living expenses to handle unexpected financial challenges.",
+    "category": "savings"
+  },
+  {
+    "id": "tip-002",
+    "content": "The 50/30/20 rule: allocate 50% of income to needs, 30% to wants, and 20% to savings and debt repayment.",
+    "category": "budgeting"
+  },
+  {
+    "id": "tip-003",
+    "content": "Start investing early. Even small regular contributions can grow significantly through compound interest over time.",
+    "category": "investing"
+  },
+  {
+    "id": "tip-004",
+    "content": "Track every expense for one month to identify spending patterns and areas where you can cut costs.",
+    "category": "budgeting"
+  },
+  {
+    "id": "tip-005",
+    "content": "Automate your savings by setting up automatic transfers right after payday to prioritize saving.",
+    "category": "savings"
+  },
+  {
+    "id": "tip-006",
+    "content": "Diversify your investment portfolio across different asset classes to reduce risk and maximize returns.",
+    "category": "investing"
+  },
+  {
+    "id": "tip-007",
+    "content": "Avoid lifestyle inflation: when your income increases, maintain your current spending and save the difference.",
+    "category": "savings"
+  },
+  {
+    "id": "tip-008",
+    "content": "Create a monthly budget before spending and review it regularly to stay on track with financial goals.",
+    "category": "budgeting"
+  },
+  {
+    "id": "tip-009",
+    "content": "Pay yourself first by prioritizing savings before paying other expenses or debts.",
+    "category": "savings"
+  },
+  {
+    "id": "tip-010",
+    "content": "Consider low-cost index funds for long-term investing, as they have lower fees and consistent returns.",
+    "category": "investing"
+  },
+  {
+    "id": "tip-011",
+    "content": "Use the zero-based budgeting method where every dollar is assigned a purpose, reducing wasteful spending.",
+    "category": "budgeting"
+  },
+  {
+    "id": "tip-012",
+    "content": "Review and adjust your investment strategy annually to ensure it aligns with your changing life goals.",
+    "category": "investing"
+  }
+]

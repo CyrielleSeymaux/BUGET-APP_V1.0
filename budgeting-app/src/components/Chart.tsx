@@ -9,14 +9,14 @@ import useBudget from '../hooks/useBudget';
 
 const Chart: React.FC = () => {
     // Récupère les revenus et dépenses du hook useBudget
-    const { income, expenses } = useBudget();
+    const { income, totalExpenses } = useBudget();
 
     // Configuration des données du graphique
     const data = [
         {
             name: 'Budget',
             Income: income,
-            Expenses: expenses,
+            Expenses: totalExpenses,
         },
     ];
 
